@@ -38,7 +38,6 @@ public class DigitalOceanController
         };
         var droplet = await digitalOcean.Droplets.Create(request);
 
-        //check if created correctly
         if (droplet.Name == name)
         {
             return HttpStatusCode.Accepted;
