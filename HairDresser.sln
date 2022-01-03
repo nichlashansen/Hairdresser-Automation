@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HairDresserAPI", "HairDresserAPI\HairDresserAPI.csproj", "{36E03D6C-392A-414D-97FD-59B5C4EA8D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HairDresserTests", "HairDresserTests\HairDresserTests.csproj", "{63863296-C18F-4C2C-A1F2-EEDD1191F928}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36E03D6C-392A-414D-97FD-59B5C4EA8D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E03D6C-392A-414D-97FD-59B5C4EA8D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E03D6C-392A-414D-97FD-59B5C4EA8D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E03D6C-392A-414D-97FD-59B5C4EA8D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63863296-C18F-4C2C-A1F2-EEDD1191F928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63863296-C18F-4C2C-A1F2-EEDD1191F928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63863296-C18F-4C2C-A1F2-EEDD1191F928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63863296-C18F-4C2C-A1F2-EEDD1191F928}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
