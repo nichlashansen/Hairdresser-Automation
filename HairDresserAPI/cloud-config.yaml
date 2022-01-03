@@ -1,0 +1,28 @@
+#cloud-config
+users:
+  - name: Nichlas
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKpDh+nzrV1tUzpkUmX7oSRqnqkBMXuAfnojA2cA5uwi nichlashansen@MBPtilheNichlas
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+  - name: server
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKpDh+nzrV1tUzpkUmX7oSRqnqkBMXuAfnojA2cA5uwi nichlashansen@MBPtilheNichlas
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+runcmd:
+  - sed -i -e '/^Port/s/^.*$/Port 4444/' /etc/ssh/sshd_config
+  - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
+  - sed -i -e '$aAllowUsers Nichlas' /etc/ssh/sshd_config
+  - apt-get -y update && upgrade
+  - apt install -y apt-transport-https ca-certificates curl software-properties-common
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+  - apt-get -y update
+  - apt install -y docker.io
+  - usermod -a -G docker Nichlas
+  - usermod -a -G docker server
+  - systemctl restart ssh
+  - reboot
